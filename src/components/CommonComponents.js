@@ -36,11 +36,11 @@ const CommonComponents = ({ msgList }) => {
   return (
     <div>
       {messageList?.length > 0 &&
-        messageList.map((msg) => {
+        messageList.map((msg, index) => {
           return (
             <>
               {console.log("inside map", msg.message)}
-              <Message>{msg.message}</Message>
+              <Message sender={msg.sender}>{msg.message}</Message>
             </>
           );
         })}
