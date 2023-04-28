@@ -13,7 +13,8 @@ const Message = styled.div`
   padding: 10px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 10px;
-  background-color: ${(props) => (props.sender === "BOT" ? "white" : "blue")};
+  background-color: ${(props) =>
+    props.sender === "BOT" ? "white" : "#2973f0"};
   /* border:2px solid red; */
 `;
 
@@ -33,13 +34,13 @@ const CommonComponents = ({ msgList }) => {
   //   }, [messageList]);
 
   return (
-    <div style={{ border: "2px solid red" }}>
+    <div>
       {messageList?.length > 0 &&
         messageList.map((msg) => {
           return (
             <>
-              {console.log("inside map", msg)}
-              <Message />
+              {console.log("inside map", msg.message)}
+              <Message>{msg.message}</Message>
             </>
           );
         })}
