@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import ChatBoat from "./components/ChantBoat";
+import ChatBoat from "./components";
 
 const API_URL = "https://my-json-server.typicode.com/codebuds-fk/chat/chats";
 
@@ -12,9 +12,8 @@ function App() {
       .then((data) => data.json())
       .then((res) => setData(res));
   }, []);
-
   return (
-    <div className="App">
+    <div>
       <ChatBoat resData={data} />
     </div>
   );
