@@ -1,8 +1,6 @@
 import styled from "styled-components";
-import Bot from "./Bot";
 import CommonComponents from "./CommonComponents";
 import DateComponent from "./DateComponent";
-import User from "./User";
 
 const HeaderBar = styled.div`
   padding: 20px;

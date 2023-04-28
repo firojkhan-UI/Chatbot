@@ -1,7 +1,4 @@
-import { useMemo } from "react";
-import Bot from "./Bot";
 import DateComponent from "./DateComponent";
-import User from "./User";
 import styled from "styled-components";
 
 const Message = styled.div`
@@ -15,23 +12,11 @@ const Message = styled.div`
   border-bottom-left-radius: 10px;
   background-color: ${(props) =>
     props.sender === "BOT" ? "white" : "#2973f0"};
-  /* border:2px solid red; */
 `;
 
 const CommonComponents = ({ msgList }) => {
   console.log("mggLIst", msgList);
   const { messageList, latestMessageTimestamp } = msgList;
-  //console.log(latestMessageTimestamp, "ARRRR", messageList[0]);
-
-  //   const BotMsg = useMemo(() => {
-  //     const BotMsgText = messageList[0]?.message;
-  //     return BotMsgText;
-  //   }, [messageList]);
-
-  //   const UserMsg = useMemo(() => {
-  //     const userText = messageList[1]?.message;
-  //     return userText;
-  //   }, [messageList]);
 
   return (
     <div>
@@ -44,9 +29,6 @@ const CommonComponents = ({ msgList }) => {
             </>
           );
         })}
-      {/* <Bot data={messageList && messageList[0]?.message} />
-      <DateComponent timeStamp={latestMessageTimestamp} />
-      <User data={messageList && messageList[1]?.message} /> */}
     </div>
   );
 };
