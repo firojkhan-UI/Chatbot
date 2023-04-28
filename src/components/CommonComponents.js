@@ -12,6 +12,7 @@ const Message = styled.div`
   border-bottom-left-radius: 10px;
   background-color: ${(props) =>
     props.sender === "BOT" ? "white" : "#2973f0"};
+  float: ${(props) => (props.sender === "BOT" ? "null" : "right")};
 `;
 
 const CommonComponents = ({ msgList }) => {
