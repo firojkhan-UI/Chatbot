@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import ChatBoat from "./components";
+import ChatBoat from "./components/ChatBoat";
 
 const API_URL = "https://my-json-server.typicode.com/codebuds-fk/chat/chats";
 

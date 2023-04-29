@@ -3,6 +3,8 @@ import styled from "styled-components";
 import MsgChatBox from "./MsgChatBox";
 
 const WrapperChatBoat = styled.div`
+  max-height: calc(100vh - 90px);
+  overflow: hidden;
   width: 80%;
   padding: 20px;
   display: flex;
@@ -38,20 +40,25 @@ const ChatBoat = (props) => {
   const _handleMsgData = (list) => {
     setMessageList(list);
   };
-
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px", height: "100vh" }}>
       <WrapperChatBoat>
         <ProductContainer>
           <div>
             <input onChange={_handleChange} type="text" value={search} />
           </div>
-          <div style={{ padding: "3.2rem 2.5rem 0rem 0rem" }}>
+          <div
+            style={{
+              padding: "3.2rem 2.5rem 0rem 0rem",
+              overflow: "scroll",
+              height: "calc(100% - 60px)",
+            }}
+          >
             {product?.map((item) => (
               <div style={{ display: "flex", marginTop: "25px" }}>
                 <div style={{ width: "40px" }}>
                   <img
-                    src={item.imageURL}
+                    src={item?.imageURL}
                     style={{ width: "50%" }}
                     alt="ProductIcon"
                   />
@@ -60,9 +67,9 @@ const ChatBoat = (props) => {
                   style={{ cursor: "pointer" }}
                   onClick={() => _handleMsgData(item)}
                 >
-                  <Title style={{ marginLeft: "1rem" }}>{item.title}</Title>
-                  <p style={{ marginLeft: "1rem" }}>order: {item.orderId}</p>
-                  <p style={{ marginLeft: "1rem" }}>{item.message}</p>
+                  <Title style={{ marginLeft: "1rem" }}>{item?.title}</Title>
+                  <p style={{ marginLeft: "1rem" }}>order: {item?.orderId}</p>
+                  <p style={{ marginLeft: "1rem" }}>{item?.message}</p>
                 </div>
               </div>
             ))}

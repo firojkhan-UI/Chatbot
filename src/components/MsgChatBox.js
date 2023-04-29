@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import CommonComponents from "./CommonComponents";
-import DateComponent from "./DateComponent";
 
 const HeaderBar = styled.div`
   padding: 20px;
@@ -14,7 +13,7 @@ const HeaderBar = styled.div`
 
 const MsgChatBox = ({ listItem }) => {
   return (
-    <div>
+    <div style={{ overflow: "scroll", height: "calc(100vh - 160px)" }}>
       <HeaderBar>
         <div style={{ display: "inline-flex" }}>
           <span>
@@ -27,7 +26,7 @@ const MsgChatBox = ({ listItem }) => {
               />
             </div>
           </span>
-          <span style={{ marginLeft: "15px" }}>{listItem.title}</span>
+          <span style={{ marginLeft: "15px" }}>{listItem?.title}</span>
         </div>
       </HeaderBar>
 
